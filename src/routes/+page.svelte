@@ -1,6 +1,21 @@
 <script>
-  let bool = false;
+  import List from '../components/List.svelte';
 
+  let bool = false;
+  let skills = [
+    { id: 1, text: 'HTML/HTML5' },
+    { id: 2, text: 'CSS/CSS3' },
+    { id: 3, text: 'Javascript' },
+    { id: 4, text: 'SCSS/SASS' },
+    { id: 5, text: 'Wordpress' },
+    { id: 6, text: 'AEM(Frontend)' },
+    { id: 7, text: 'GIT' },
+    { id: 8, text: 'RWD' },
+    { id: 9, text: 'jQuery' },
+    { id: 10, text: 'Gulp' },
+    { id: 11, text: 'Handlebars' },
+    { id: 12, text: 'Svelte' }
+  ];
 
   function switchTheme(e){
     bool = e.target.checked;
@@ -46,20 +61,7 @@
             </div>
         </div>
             <div>
-                <ul class="masonry-list flex flex-row flex-wrap text-lightpurple text-xs uppercase">
-                    <li class="item">HTML/HTML5</li>
-                    <li class="item">CSS/CSS3</li>
-                    <li class="item">Javascript</li>
-                    <li class="item">SCSS/SASS</li>
-                    <li class="item">Wordpress</li>
-                    <li class="item">AEM (Frontend)</li>
-                    <li class="item">GIT</li>
-                    <li class="item">RWD</li>
-                    <li class="item">jQuery</li>
-                    <li class="item">Gulp</li>
-                    <li class="item">Handlebars</li>
-                    <li class="item">Svelte</li>
-                </ul>
+                <List items={skills} listClass="masonry-list flex flex-row flex-wrap text-lightpurple text-xs uppercase"/>
             </div>
            
         </section>
@@ -105,7 +107,3 @@
     </div>
     <!-- container-->
 </main>
-
-<style lang="postcss">
-
-</style>
