@@ -1,3 +1,124 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+:root {
+  --primary-color: #fff;
+  --secondary-color: #B08AF8;
+  --tertiary-color: #ECC080;
+}
+
+html {
+  background-image: url('images/film-grain.png');
+  background-size: 20%;
+}
+
+html::after {
+  background-color: #130D19;
+  content: '';
+  height: 100%;
+  width: 100%;
+  opacity: 0.85;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* switch theme */
+.switch-theme {
+  border-radius: 30px;
+  width: 70px;
+  display: inline-block;
+  height: 35px;
+  position: absolute;
+  left: 20px;
+  top: 30px;
+  border: 1px solid white;
+}
+
+.switch-theme input[type="checkbox"]{
+  width: 100%;
+  height: 100%;
+}
+
+.switch-theme--toggle {
+  transition: 0.5s;
+  height: 35px;
+  width: 35px;
+  border-radius: 100%;
+  background-color: #ECC080;
+}
+
+/* header */
+header .content,
+header .headline {
+  width: 70%;
+}
+
+header p {
+  line-height: 3rem;
+}
+
+/* social media */
+.port-socialmedia {
+  right: -8.5%;
+  top: 48%;
+  rotate: z 90deg;
+  gap: 15px;
+}
+
+.port-socialmedia li {
+  list-style-type: none;
+}
+
+.port-socialmedia .break {
+  width: 80px;
+  height: 1px;
+}
+
+.port-socialmedia a {
+  font-size: 12px;
+  position: relative;
+}
+
+.port-socialmedia a:hover {
+  text-decoration: dashed;
+  color: var(--tertiary-color);
+}
+
+/* skills */
+.port-skills > div {
+  width: 50%;
+}
+.port-skills ul {
+  gap: 10px; /* Adjust the gap between items as needed */
+  list-style: none;
+  padding: 0;
+}
+
+.port-skills li {
+  border: 1px solid var(--secondary-color);
+  list-style-type: none;
+  padding: 15px 15px;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+.port-skills .headline {
+  box-sizing: border-box;
+}
+
+
+.port-skills .headline h2 {
+  margin: 10px 0 0;
+}
+
+/*past work */
+.port-past-companies > div {
+  width: 50%;
+}
