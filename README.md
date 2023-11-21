@@ -1,38 +1,23 @@
-# create-svelte
+# Personal Portfolio - Frontend Developer
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Welcome to my personal portfolio! This project showcases my skills and projects as a frontend developer. I designed and developed this portfolio using SvelteKit and Tailwind CSS to create a visually appealing and responsive web application.
 
-## Creating a project
+You can check out my portfolio [here](https://hannnirin-github-io.vercel.app/).
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Features
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+- **Responsive Design:** The portfolio is designed to be accessible and visually pleasing across various devices and screen sizes.
+- **Project Showcase:** Highlighting key projects with descriptions, technologies used, and links to the code or live demo. (this will be posted pretty soon)
+- **Skills Section:** A comprehensive list of my technical skills and competencies.
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+## Technologies Used
 
-## Developing
+- **SvelteKit:** A powerful and efficient framework for building web applications with Svelte.
+- **Tailwind CSS:** A utility-first CSS framework that makes styling and designing your user interface a breeze.
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Contact
 
-```bash
-npm run dev
+Feel free to reach out to me if you have any questions or just want to connect:
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+- **Email**: rainhontanosas@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/irenehontanosas/
