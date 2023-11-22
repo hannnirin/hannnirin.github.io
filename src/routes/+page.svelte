@@ -2,8 +2,10 @@
   import List from '../components/List.svelte';
   import Companies from '../components/Companies.svelte';
   import Headline from '../components/Headline.svelte';
+	import ContactSidebar from '../components/ContactSidebar.svelte';
+	import ThemePicker from '../components/ThemePicker.svelte';
 
-  let bool = false;
+  
   let skills = [
     { text: 'HTML/HTML5' },
     { text: 'CSS/CSS3' },
@@ -16,7 +18,7 @@
     { text: 'jQuery' },
     { text: 'Gulp' },
     { text: 'Handlebars' },
-    { id: 12, text: 'Svelte' }
+    { text: 'Svelte' }
   ];
 
   let companies = [
@@ -42,26 +44,35 @@
     }
   ];
 
-  function switchTheme(e){
-    bool = e.target.checked;
-    console.log('Checkbox state changed:', bool);
-  }
+  let socials = [
+    {
+      type: 'social',
+      website: 'Linkedin',
+      url: 'https://www.linkedin.com/in/irenehontanosas/'
+    },
+    {
+      type: 'social',
+      website: 'Dribbble',
+      url: 'https://dribbble.com/hannnirin'
+    },
+    {
+      type: 'break',
+      website: '',
+      url: ''
+    },
+    {
+      type: 'social',
+      website: 'rainhontanosas@gmail.com',
+      url: 'mailto:rainhontanosas@gmail.com'
+    }
+  ];
 
 </script>
 
-<!-- social media -->
- <ul class="port-socialmedia fixed flex text-white">
-  <li><a href="https://www.linkedin.com/in/irenehontanosas/" target="_blank" class="uppercase">Linkedin</a></li>
-  <li><a href="https://dribbble.com/hannnirin" target="_blank" class="uppercase">Dribbble</a></li>
-  <li class="flex items-center "><span class="break bg-lightpurple"></span></li>
-  <li><a href="mailto:rainhontanosas@gmail.com" class="uppercase">rainhontanosas@gmail.com</a></li>
-</ul>
 
-<!-- switch theme -->
-<!--label for="" class="switch-theme">
-  <input type="checkbox" name="" id="" value="light" on:change={switchTheme} bind:checked={bool} class="w-full h-full opacity-0">
-  <span class="switch-theme--toggle"></span>
-</label-->
+
+<ThemePicker/>
+<ContactSidebar socials={socials}/>
 
 <!-- hero section-->
 <header class="pt-96 pb-40">
@@ -80,23 +91,19 @@
     <div class="container px-28">
         <section class="port-skills flex flex-row justify-center">
           <div>
-            <Headline class="" headlineTag="skills" headlineTagClass="text-white" headlineTitle="few things i am familiar and worked with"/>
+            <Headline headlineTag="skills" headlineTagClass="text-white" headlineTitle="few things i am familiar and worked with" headlineTitleClass="2xl:pr-48"/>
         </div>
             <div>
                 <List items={skills} listClass="masonry-list flex flex-row flex-wrap text-lightpurple text-xs uppercase"/>
             </div>
-           
         </section>
         <section class="port-background py-56 pr-44">
-          <Headline class="" headlineTag="history" headlineTagClass="text-orange" headlineTitle="" detail="I graduated with a Bachelor's degree in Information Technology. I started my career as a PHP Developer, initially unaware of the distinct role that entails both coding and the utilization of design mockups. Within less than a year, I made the decision to specialize in Frontend roles and pursued additional training in user interface and user experience." detailClass="text-white text-2xl leading-relaxed"/>
+
+          <Headline headlineTag="history" headlineTagClass="text-orange" headlineTitle="" detail="I graduated with a Bachelor's degree in Information Technology. I started my career as a PHP Developer, initially unaware of the distinct role that entails both coding and the utilization of design mockups. Within less than a year, I made the decision to specialize in Frontend roles and pursued additional training in user interface and user experience." detailClass="text-white text-2xl leading-relaxed"/>
           
-          <!-- <div class="headline pr-44">
-              <label for="" class="uppercase text-xs text-orange">history</label>
-              <p class="text-white text-2xl leading-relaxed">I graduated with a Bachelor's degree in Information Technology. I started my career as a PHP Developer, initially unaware of the distinct role that entails both coding and the utilization of design mockups. Within less than a year, I made the decision to specialize in Frontend roles and pursued additional training in user interface and user experience.</p>
-          </div> -->
         </section>
         <section class="pb-48 flex port-past-companies">
-            <Headline class="" headlineTag="companies i have worked with" headlineTagClass="text-white" headlineTitle="crafted my expertise with these companies"/>
+            <Headline headlineTag="companies i have worked with" headlineTagClass="text-white" headlineTitle="crafted my expertise with these companies" headlineTitleClass="xl:pr-48"/>
             
            <Companies companiesClass="text-white" companies={companies}/>
           

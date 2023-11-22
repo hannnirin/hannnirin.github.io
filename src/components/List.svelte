@@ -4,7 +4,7 @@
 </script>
 
 <ul class={listClass}>
-  {#each items as item (item.id) }
+  {#each items as item  }
     <li>{item.text}</li>
   {/each}
 </ul>

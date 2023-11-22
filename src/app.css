@@ -27,28 +27,119 @@ html::after {
 }
 
 /* switch theme */
+.switch-theme-wrapper {
+  top: 50px;
+  right: 50px;
+}
+
 .switch-theme {
-  border-radius: 30px;
-  width: 70px;
+  font-size: 17px;
+  position: relative;
   display: inline-block;
-  height: 35px;
+  width: 64px;
+  height: 34px;
+}
+
+.switch-theme .sun svg {
   position: absolute;
-  left: 20px;
-  top: 30px;
-  border: 1px solid white;
+  top: 6px;
+  left: 36px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+.switch-theme .moon svg {
+  fill: #73C0FC;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+}
+
+/* .switch:hover */
+.switch-theme .sun svg {
+  animation: rotate 15s linear infinite;
+}
+
+@keyframes rotate {
+ 
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* .switch:hover */
+.switch-theme .moon svg {
+  animation: tilt 5s linear infinite;
+}
+
+@keyframes tilt {
+ 
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-10deg);
+  }
+
+  75% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .switch-theme input[type="checkbox"]{
-  width: 100%;
-  height: 100%;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.switch-theme--toggle {
-  transition: 0.5s;
-  height: 35px;
-  width: 35px;
-  border-radius: 100%;
-  background-color: #ECC080;
+.switch-theme .input:checked + .slider {
+  background-color: #183153;
+}
+
+.switch-theme .input:focus + .slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.switch-theme .input:checked + .slider:before {
+  transform: translateX(30px);
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #73C0FC;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  left: 2px;
+  bottom: 2px;
+  z-index: 2;
+  background-color: #e8e8e8;
+  transition: .4s;
 }
 
 /* header */
@@ -63,10 +154,10 @@ header p {
 
 /* social media */
 .port-socialmedia {
-  right: -8.5%;
-  top: 48%;
   rotate: z 90deg;
   gap: 15px;
+  right: -150px;
+  top: 500px;
 }
 
 .port-socialmedia li {
