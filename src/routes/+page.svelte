@@ -1,4 +1,6 @@
 <script>
+  import { bool } from '../stores/stores.js';
+
   import List from '../components/List.svelte';
   import Companies from '../components/Companies.svelte';
   import Headline from '../components/Headline.svelte';
@@ -78,11 +80,11 @@
 <header class="pt-96 pb-40">
     <div class="container flex flex-col px-28">
         <div class="headline justify-center">
-            <label for="" class="uppercase text-white text-xs">Introduction</label>
-            <h1 class="font-primary font-semibold text-white text-6xl pr-32">Hello, my name is <span class="text-neongreen">Irene</span></h1>
+            <label for="" class="uppercase text-xs { $bool ? 'text-darkpurple' : 'text-white'}">Introduction</label>
+            <h1 class="delay-75 font-primary font-semibold text-6xl pr-32 { $bool ? 'text-darkpurple' : 'text-white'}">Hello, my name is <span class="text-neongreen">Irene</span></h1>
         </div>
         <div class="content mt-6 justify-center">
-            <p class="text-white text-4xl leading-relaxed">I work as an AEM Frontend Developer at HEDY Philippines Inc. I love creating smooth solutions using modern designs, turning ideas into engaging user interfaces with skill and creativity.</p>
+            <p class="delay-75 text-4xl leading-relaxed { $bool ? 'text-darkpurple' : 'text-white'}">I work as an AEM Frontend Developer at HEDY Philippines Inc. I love creating smooth solutions using modern designs, turning ideas into engaging user interfaces with skill and creativity.</p>
         </div>
     </div>
     <!-- container-->
@@ -91,7 +93,7 @@
     <div class="container px-28">
         <section class="port-skills flex flex-row justify-center">
           <div>
-            <Headline headlineTag="skills" headlineTagClass="text-white" headlineTitle="few things i am familiar and worked with" headlineTitleClass="2xl:pr-48"/>
+            <Headline headlineTag="skills" headlineTagClass="text-white uppercase" headlineTitle="few things i am familiar and worked with" headlineTitleClass="2xl:pr-48"/>
         </div>
             <div>
                 <List items={skills} listClass="masonry-list flex flex-row flex-wrap text-lightpurple text-xs uppercase"/>
@@ -99,11 +101,11 @@
         </section>
         <section class="port-background py-56 pr-44">
 
-          <Headline headlineTag="history" headlineTagClass="text-orange" headlineTitle="" detail="I graduated with a Bachelor's degree in Information Technology. I started my career as a PHP Developer, initially unaware of the distinct role that entails both coding and the utilization of design mockups. Within less than a year, I made the decision to specialize in Frontend roles and pursued additional training in user interface and user experience." detailClass="text-white text-2xl leading-relaxed"/>
+          <Headline headlineTag="history" headlineTagClass="text-orange" headlineTitle="" detail="I graduated with a Bachelor's degree in Information Technology. I started my career as a PHP Developer, initially unaware of the distinct role that entails both coding and the utilization of design mockups. Within less than a year, I made the decision to specialize in Frontend roles and pursued additional training in user interface and user experience." detailClass="text-2xl leading-relaxed"/>
           
         </section>
         <section class="pb-48 flex port-past-companies">
-            <Headline headlineTag="companies i have worked with" headlineTagClass="text-white" headlineTitle="crafted my expertise with these companies" headlineTitleClass="xl:pr-48"/>
+            <Headline headlineTag="companies i have worked with" headlineTagClass="text-white uppercase" headlineTitle="crafted my expertise with these companies" headlineTitleClass="xl:pr-48"/>
             
            <Companies companiesClass="text-white" companies={companies}/>
           

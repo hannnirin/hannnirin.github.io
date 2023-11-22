@@ -17,6 +17,7 @@ html {
 
 html::after {
   background-color: #130D19;
+  transition: .7s;
   content: '';
   height: 100%;
   width: 100%;
@@ -36,67 +37,8 @@ html::after {
   font-size: 17px;
   position: relative;
   display: inline-block;
-  width: 64px;
-  height: 34px;
-}
-
-.switch-theme .sun svg {
-  position: absolute;
-  top: 6px;
-  left: 36px;
-  z-index: 1;
-  width: 24px;
-  height: 24px;
-}
-
-.switch-theme .moon svg {
-  fill: #73C0FC;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  z-index: 1;
-  width: 24px;
-  height: 24px;
-}
-
-/* .switch:hover */
-.switch-theme .sun svg {
-  animation: rotate 15s linear infinite;
-}
-
-@keyframes rotate {
- 
-  0% {
-    transform: rotate(0);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* .switch:hover */
-.switch-theme .moon svg {
-  animation: tilt 5s linear infinite;
-}
-
-@keyframes tilt {
- 
-  0% {
-    transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(-10deg);
-  }
-
-  75% {
-    transform: rotate(10deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
+  width: 50px;
+  height: 25px;
 }
 
 .switch-theme input[type="checkbox"]{
@@ -106,7 +48,7 @@ html::after {
 }
 
 .switch-theme .input:checked + .slider {
-  background-color: #183153;
+  background-color: #ececec;
 }
 
 .switch-theme .input:focus + .slider {
@@ -114,7 +56,8 @@ html::after {
 }
 
 .switch-theme .input:checked + .slider:before {
-  transform: translateX(30px);
+  transform: translateX(24px);
+  background-color: #130D19;
 }
 
 .slider {
@@ -124,21 +67,19 @@ html::after {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #73C0FC;
+  background-color: #130D19;
   transition: .4s;
-  border-radius: 30px;
 }
 
 .slider:before {
   position: absolute;
   content: "";
-  height: 30px;
-  width: 30px;
-  border-radius: 20px;
-  left: 2px;
-  bottom: 2px;
+  height: 15px;
+  width: 15px;
+  left: 5px;
+  bottom: 5px;
   z-index: 2;
-  background-color: #e8e8e8;
+  background-color: #efff67;
   transition: .4s;
 }
 
@@ -212,4 +153,9 @@ header p {
 /*past work */
 .port-past-companies > div {
   width: 50%;
+}
+
+/* light theme */
+.light-theme::after {
+  background-color: #e3dfe7;
 }
