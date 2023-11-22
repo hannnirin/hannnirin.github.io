@@ -1,20 +1,45 @@
 <script>
   import List from '../components/List.svelte';
+  import Companies from '../components/Companies.svelte';
+  import Headline from '../components/Headline.svelte';
 
   let bool = false;
   let skills = [
-    { id: 1, text: 'HTML/HTML5' },
-    { id: 2, text: 'CSS/CSS3' },
-    { id: 3, text: 'Javascript' },
-    { id: 4, text: 'SCSS/SASS' },
-    { id: 5, text: 'Wordpress' },
-    { id: 6, text: 'AEM(Frontend)' },
-    { id: 7, text: 'GIT' },
-    { id: 8, text: 'RWD' },
-    { id: 9, text: 'jQuery' },
-    { id: 10, text: 'Gulp' },
-    { id: 11, text: 'Handlebars' },
+    { text: 'HTML/HTML5' },
+    { text: 'CSS/CSS3' },
+    { text: 'Javascript' },
+    { text: 'SCSS/SASS' },
+    { text: 'Wordpress' },
+    { text: 'AEM(Frontend)' },
+    { text: 'GIT' },
+    { text: 'RWD' },
+    { text: 'jQuery' },
+    { text: 'Gulp' },
+    { text: 'Handlebars' },
     { id: 12, text: 'Svelte' }
+  ];
+
+  let companies = [
+    { 
+      name: 'HEDY Philippines Inc.', 
+      position: 'AEM Frontend Developer',
+      duration: 'June 2020 - Present'
+    },
+    {
+      name: 'Dripcreative',
+      position: 'Frontend Developer and Designer',
+      duration: 'May 2016 - April 2020'
+    },
+    {
+      name: 'Symph',
+      position: 'Frontend Developer and Designer',
+      duration: 'March 2014 - February 2016'
+    },
+    {
+      name: 'ViCommerce/GlobalFusion',
+      position: 'PHP Developer and Frontend Developer',
+      duration: 'April 2013 - February 2014'
+    }
   ];
 
   function switchTheme(e){
@@ -55,44 +80,25 @@
     <div class="container px-28">
         <section class="port-skills flex flex-row justify-center">
           <div>
-            <div class="headline">
-                <label for="" class="uppercase text-white text-xs">skills</label>
-                <h2 class="text-white text-4xl pr-48">few things i am familiar and worked with</h2>
-            </div>
+            <Headline class="" headlineTag="skills" headlineTagClass="text-white" headlineTitle="few things i am familiar and worked with"/>
         </div>
             <div>
                 <List items={skills} listClass="masonry-list flex flex-row flex-wrap text-lightpurple text-xs uppercase"/>
             </div>
            
         </section>
-        <section class="port-background py-56">
-          <div class="headline pr-44">
+        <section class="port-background py-56 pr-44">
+          <Headline class="" headlineTag="history" headlineTagClass="text-orange" headlineTitle="" detail="I graduated with a Bachelor's degree in Information Technology. I started my career as a PHP Developer, initially unaware of the distinct role that entails both coding and the utilization of design mockups. Within less than a year, I made the decision to specialize in Frontend roles and pursued additional training in user interface and user experience." detailClass="text-white text-2xl leading-relaxed"/>
+          
+          <!-- <div class="headline pr-44">
               <label for="" class="uppercase text-xs text-orange">history</label>
               <p class="text-white text-2xl leading-relaxed">I graduated with a Bachelor's degree in Information Technology. I started my career as a PHP Developer, initially unaware of the distinct role that entails both coding and the utilization of design mockups. Within less than a year, I made the decision to specialize in Frontend roles and pursued additional training in user interface and user experience.</p>
-          </div>
+          </div> -->
         </section>
         <section class="pb-48 flex port-past-companies">
+            <Headline class="" headlineTag="companies i have worked with" headlineTagClass="text-white" headlineTitle="crafted my expertise with these companies"/>
             
-            <div class="headline">
-              <label for="" class="uppercase text-white text-xs">companies i have worked with</label>
-              <h2 class="text-white text-4xl">crafted my expertise with these companies</h2>
-            </div>
-            <ul class="text-white">
-                <li class="my-4"><label for="" class="text-lightpurple text-lg">HEDY PHILIPPINES INC.</label>
-                    <p class="text-xs">AEM Frontend Developer; June 2020 - Present;</p>
-                </li>
-                <li class="my-4"><label for="" class="text-lightpurple text-lg">Dripcreative</label>
-                    <p class="text-xs">Frontend Developer and Designer; May 2016 - April 2020;</p>
-                </li>
-                <li class="my-4">
-                  <label for="" class="text-lightpurple text-lg">Symph</label>
-                  <p class="text-xs">Frontend Developer and Designer; March 2014 - February 2016;</p>
-                </li>
-                <li class="my-4">
-                  <label for="" class="text-lightpurple text-lg">ViCommer/GlobalFusion</label>
-                  <p class="text-xs">PHP Developer and Frontend Developer; April 2013 - February 2014; </p>
-                </li>
-            </ul>
+           <Companies companiesClass="text-white" companies={companies}/>
           
         </section>
         <!-- history -->
