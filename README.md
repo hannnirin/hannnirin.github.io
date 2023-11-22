@@ -2,7 +2,7 @@
 
 Welcome to my personal portfolio! This project showcases my skills and projects as a frontend developer. I designed and developed this portfolio using SvelteKit and Tailwind CSS to create a visually appealing and responsive web application.
 
-You can check out my portfolio [here](https://hannnirin-github-io.vercel.app/).
+You can check out my portfolio [here](https://hannnirin.vercel.app/).
 
 ## Features
 
