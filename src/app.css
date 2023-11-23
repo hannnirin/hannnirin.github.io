@@ -159,3 +159,8 @@ header p {
 .light-theme::after {
   background-color: #e3dfe7;
 }
+
+.light-theme .masonry-list li {
+  background-color: #0003ff;
+  border-color: #0003ff;
+}

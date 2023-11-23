@@ -80,8 +80,8 @@
 <header class="pt-96 pb-40">
     <div class="container flex flex-col px-28">
         <div class="headline justify-center">
-            <label for="" class="uppercase text-xs { $bool ? 'text-darkpurple' : 'text-white'}">Introduction</label>
-            <h1 class="delay-75 font-primary font-semibold text-6xl pr-32 { $bool ? 'text-darkpurple' : 'text-white'}">Hello, my name is <span class="text-neongreen">Irene</span></h1>
+            <label for="" class="delay-75 uppercase text-xs { $bool ? 'text-darkpurple' : 'text-white'}">Introduction</label>
+            <h1 class="delay-75 font-primary font-semibold text-6xl pr-32 { $bool ? 'text-darkpurple' : 'text-white'}">Hello, my name is <span class="delay-75 { $bool ? 'text-purpleblue' : 'text-neongreen'}">Irene</span></h1>
         </div>
         <div class="content mt-6 justify-center">
             <p class="delay-75 text-4xl leading-relaxed { $bool ? 'text-darkpurple' : 'text-white'}">I work as an AEM Frontend Developer at HEDY Philippines Inc. I love creating smooth solutions using modern designs, turning ideas into engaging user interfaces with skill and creativity.</p>
@@ -96,7 +96,7 @@
             <Headline headlineTag="skills" headlineTagClass="text-white uppercase" headlineTitle="few things i am familiar and worked with" headlineTitleClass="2xl:pr-48"/>
         </div>
             <div>
-                <List items={skills} listClass="masonry-list flex flex-row flex-wrap text-lightpurple text-xs uppercase"/>
+                <List items={skills} listClass="masonry-list flex flex-row flex-wrap text-xs uppercase { $bool ? 'text-white' : 'text-lightpurple'}"/>
             </div>
         </section>
         <section class="port-background py-56 pr-44">

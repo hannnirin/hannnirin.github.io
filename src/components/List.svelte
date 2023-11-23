@@ -5,6 +5,6 @@
 
 <ul class={listClass}>
   {#each items as item  }
-    <li>{item.text}</li>
+    <li class="delay-75">{item.text}</li>
   {/each}
 </ul>

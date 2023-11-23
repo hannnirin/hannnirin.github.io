@@ -12,16 +12,16 @@
 
 <div class="headline {headlineClass}">
 
-  {#if headlineTagClass === 'text-orange'} 
-    <label for="" class="delay-75 uppercase text-xs  { $bool ? 'text-darkpurple' : 'text-orange'}">{headlineTag}</label>
+  {#if headlineTagClass === 'text-neongreen'} 
+    <label for="" class="delay-75 uppercase text-xs  { $bool ? 'text-darkpurple' : 'text-neongreen'}">{headlineTag}</label>
 
     {:else}
-    <label for="" class="delay-75 uppercase { $bool ? 'text-darkpurple' : 'text-white'}">{headlineTag}</label>
+    <label for="" class="delay-75 text-xs uppercase { $bool ? 'text-darkpurple' : 'text-white'}">{headlineTag}</label>
   {/if}
   
   
   {#if headlineTitle}
-    <h2 class="text-white text-4xl {headlineTitleClass} delay-75">{headlineTitle}</h2>
+    <h2 class="text-4xl {headlineTitleClass} { $bool ? 'text-darkpurple' : 'text-white'} delay-75">{headlineTitle}</h2>
   {/if}
 
   {#if detail}
