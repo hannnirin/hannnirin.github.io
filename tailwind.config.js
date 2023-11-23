@@ -21,6 +21,7 @@ export default {
       darkpurple: '#130D19',
       orange: '#ECC080',
       neongreen: '#efff67',
+      purpleblue: '#0003ff',
     },
     extend: {
       fontFamily: {

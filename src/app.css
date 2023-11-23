@@ -17,6 +17,7 @@ html {
 
 html::after {
   background-color: #130D19;
+  transition: .7s;
   content: '';
   height: 100%;
   width: 100%;
@@ -27,28 +28,59 @@ html::after {
 }
 
 /* switch theme */
+.switch-theme-wrapper {
+  top: 50px;
+  right: 50px;
+}
+
 .switch-theme {
-  border-radius: 30px;
-  width: 70px;
+  font-size: 17px;
+  position: relative;
   display: inline-block;
-  height: 35px;
-  position: absolute;
-  left: 20px;
-  top: 30px;
-  border: 1px solid white;
+  width: 50px;
+  height: 25px;
 }
 
 .switch-theme input[type="checkbox"]{
-  width: 100%;
-  height: 100%;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.switch-theme--toggle {
-  transition: 0.5s;
-  height: 35px;
-  width: 35px;
-  border-radius: 100%;
-  background-color: #ECC080;
+.switch-theme .input:checked + .slider {
+  background-color: #ececec;
+}
+
+.switch-theme .input:focus + .slider {
+  box-shadow: 0 0 1px #183153;
+}
+
+.switch-theme .input:checked + .slider:before {
+  transform: translateX(24px);
+  background-color: #130D19;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #130D19;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 15px;
+  width: 15px;
+  left: 5px;
+  bottom: 5px;
+  z-index: 2;
+  background-color: #efff67;
+  transition: .4s;
 }
 
 /* header */
@@ -63,10 +95,10 @@ header p {
 
 /* social media */
 .port-socialmedia {
-  right: -8.5%;
-  top: 48%;
   rotate: z 90deg;
   gap: 15px;
+  right: -150px;
+  top: 500px;
 }
 
 .port-socialmedia li {
@@ -121,4 +153,14 @@ header p {
 /*past work */
 .port-past-companies > div {
   width: 50%;
+}
+
+/* light theme */
+.light-theme::after {
+  background-color: #e3dfe7;
+}
+
+.light-theme .masonry-list li {
+  background-color: #0003ff;
+  border-color: #0003ff;
 }

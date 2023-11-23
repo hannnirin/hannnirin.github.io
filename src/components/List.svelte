@@ -4,7 +4,7 @@
 </script>
 
 <ul class={listClass}>
-  {#each items as item (item.id) }
-    <li>{item.text}</li>
+  {#each items as item  }
+    <li class="delay-75">{item.text}</li>
   {/each}
 </ul>
