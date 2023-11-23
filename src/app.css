@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 :root {
   --primary-color: #fff;
   --secondary-color: #B08AF8;
@@ -35,16 +33,9 @@ html::after {
 
 .switch-theme {
   font-size: 17px;
-  position: relative;
   display: inline-block;
   width: 50px;
   height: 25px;
-}
-
-.switch-theme input[type="checkbox"]{
-  opacity: 0;
-  width: 0;
-  height: 0;
 }
 
 .switch-theme .input:checked + .slider {
@@ -61,12 +52,7 @@ html::after {
 }
 
 .slider {
-  position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   background-color: #130D19;
   transition: .4s;
 }
@@ -101,18 +87,9 @@ header p {
   top: 500px;
 }
 
-.port-socialmedia li {
-  list-style-type: none;
-}
-
 .port-socialmedia .break {
   width: 80px;
   height: 1px;
-}
-
-.port-socialmedia a {
-  font-size: 12px;
-  position: relative;
 }
 
 .port-socialmedia a:hover {
@@ -121,37 +98,21 @@ header p {
 }
 
 /* skills */
-.port-skills > div {
-  width: 50%;
-}
 .port-skills ul {
   gap: 10px; /* Adjust the gap between items as needed */
-  list-style: none;
-  padding: 0;
 }
 
 .port-skills li {
   border: 1px solid var(--secondary-color);
-  list-style-type: none;
-  padding: 15px 15px;
-  text-transform: uppercase;
-  margin: 0;
-  text-align: center;
-  width: fit-content;
-  height: fit-content;
 }
-
-.port-skills .headline {
-  box-sizing: border-box;
-}
-
 
 .port-skills .headline h2 {
   margin: 10px 0 0;
 }
 
 /*past work */
-.port-past-companies > div {
+.port-past-companies > div,
+.port-skills > div {
   width: 50%;
 }
 
@@ -163,4 +124,51 @@ header p {
 .light-theme .masonry-list li {
   background-color: #0003ff;
   border-color: #0003ff;
+}
+
+/* noise animation */
+@keyframes noise {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  10% {
+    transform: translate(-5vw, -5vh);
+  }
+
+  20% {
+    transform: translate(-10vw, 5vh);
+  }
+
+  30% {
+    transform: translate(5vw, -10vh);
+  }
+
+  40% {
+    transform: translate(-5vw, 15vh);
+  }
+
+  50% {
+    transform: translate(-10vw, 5vh);
+  }
+
+  60% {
+    transform: translate(15vw, 0vh);
+  }
+
+  70% {
+    transform: translate(0vw, 10vh);
+  }
+
+  80% {
+    transform: translate(-15vw, 0vh);
+  }
+
+  90% {
+    transform: translate(10vw, 5vh);
+  }
+
+  100% {
+    transform: translate(5vw, 0vh);
+  }
 }

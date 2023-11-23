@@ -96,12 +96,12 @@
             <Headline headlineTag="skills" headlineTagClass="text-white uppercase" headlineTitle="few things i am familiar and worked with" headlineTitleClass="2xl:pr-48"/>
         </div>
             <div>
-                <List items={skills} listClass="masonry-list flex flex-row flex-wrap text-xs uppercase { $bool ? 'text-white' : 'text-lightpurple'}"/>
+                <List items={skills} listClass="p-0 masonry-list list-none flex flex-row flex-wrap text-xs text-center uppercase { $bool ? 'text-white' : 'text-lightpurple'}"/>
             </div>
         </section>
         <section class="port-background py-56 pr-44">
 
-          <Headline headlineTag="history" headlineTagClass="text-orange" headlineTitle="" detail="I graduated with a Bachelor's degree in Information Technology. I started my career as a PHP Developer, initially unaware of the distinct role that entails both coding and the utilization of design mockups. Within less than a year, I made the decision to specialize in Frontend roles and pursued additional training in user interface and user experience." detailClass="text-2xl leading-relaxed"/>
+          <Headline headlineTag="history" headlineTagClass="text-neongreen" headlineTitle="" detail="I graduated with a Bachelor's degree in Information Technology. I started my career as a PHP Developer, initially unaware of the distinct role that entails both coding and the utilization of design mockups. Within less than a year, I made the decision to specialize in Frontend roles and pursued additional training in user interface and user experience." detailClass="text-2xl leading-relaxed"/>
           
         </section>
         <section class="pb-48 flex port-past-companies">
