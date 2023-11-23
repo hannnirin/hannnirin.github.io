@@ -20,7 +20,8 @@
     { text: 'jQuery' },
     { text: 'Gulp' },
     { text: 'Handlebars' },
-    { text: 'Svelte' }
+    { text: 'Svelte' },
+    { text: 'TailwindCSS' },
   ];
 
   let companies = [
