@@ -8,21 +8,30 @@
   --tertiary-color: #ECC080;
 }
 
-html {
+.noise-bg {
   background-image: url('/images/film-grain.png');
-  background-size: 20%;
+  background-size: 10%;
+  animation: noise .2s steps(2) infinite;
+  mix-blend-mode: multiply;
+  left: -50vw;
+  top: -50vh;
+  width: 200vw;
+  height: 200vh;
+  z-index: -10;
+  overflow: hidden;
 }
 
-html::after {
+.noise-bg::after {
   background-color: #130D19;
   transition: .7s;
   content: '';
   height: 100%;
   width: 100%;
   opacity: 0.85;
-  position: absolute;
   top: 0;
   left: 0;
+  z-index: -10;
+  position: absolute;
 }
 
 /* switch theme */
@@ -117,7 +126,7 @@ header p {
 }
 
 /* light theme */
-.light-theme::after {
+.light-theme .noise-bg::after {
   background-color: #e3dfe7;
 }
 
