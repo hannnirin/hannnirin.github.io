@@ -70,9 +70,8 @@
     }
   ];
 
+console.log($bool);
 </script>
-
-
 
 <ThemePicker/>
 <ContactSidebar socials={socials}/>
@@ -81,7 +80,7 @@
 <header class="pt-96 pb-40">
     <div class="container flex flex-col px-28">
         <div class="headline justify-center">
-            <label for="" class="delay-75 uppercase text-xs { $bool ? 'text-darkpurple' : 'text-white'}">Introduction</label>
+            <label for="" class="delay-75 uppercase text-xs { $bool ? 'text-white' : 'text-darkpurple'}">Introduction</label>
             <h1 class="delay-75 font-primary font-semibold text-6xl pr-32 { $bool ? 'text-darkpurple' : 'text-white'}">Hello, my name is <span class="delay-75 { $bool ? 'text-purpleblue' : 'text-neongreen'}">Irene</span></h1>
         </div>
         <div class="content mt-6 justify-center">

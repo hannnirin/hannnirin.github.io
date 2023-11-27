@@ -1,31 +1,51 @@
 <script>
+  import { removeAllClasses } from '../helpers/helpers.js';
   import { bool } from '../stores/stores.js';
+  import { onMount } from 'svelte';
 
-  const currentTime = new Date();
+  onMount(() => {
+    // switch theme from the initial load
+    defaultTheme();
+  });
 
-  // Get the local time in 24-hour format
-  let localTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+  function defaultTheme() {
+    const currentTime = new Date();
 
-   // Determine whether it's morning or evening
-  if (currentTime.getHours() >= 6 && currentTime.getHours() < 12) {
-    $bool = true;
-  } else if (currentTime.getHours() >= 18 || currentTime.getHours() < 6) {
-    $bool = false;
+    // Get the local time in 24-hour format
+    let localTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+
+    // Determine whether it's morning or evening
+    if (currentTime.getHours() >= 6 && currentTime.getHours() < 12) {
+      bool.set(true);
+      console.log(bool, 'if def');
+    } else if (currentTime.getHours() >= 18 || currentTime.getHours() < 6) {
+      bool.set(false);
+      console.log(bool, 'if def false');
+    }
+
+    //switchTheme();
   }
 
   function switchTheme(e){
-    const projectHTML = document.getElementById('port-superwrapper');
+    const projectHTML = document.getElementById("active-theme");
 
-    $bool = e.target.checked;
-    console.log('Checkbox state changed:', $bool);
+    // removing existing classes
+    removeAllClasses(projectHTML);
 
-    if($bool === true) {
-      projectHTML.classList.add('light-theme');
+    if($bool) {
+      bool.set(true);
+      console.log(bool.get(), 'light');
+
     }else {
-      projectHTML.classList.remove('light-theme');
+      
+      console.log(bool.get(), 'dark');
+
+      bool.set(false);
     }
 
   }
+
+
 
 </script>
 
