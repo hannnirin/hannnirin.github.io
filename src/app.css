@@ -23,7 +23,6 @@
 
 .noise-bg::after {
   background-color: #130D19;
-  transition: .7s;
   content: '';
   height: 100%;
   width: 100%;
