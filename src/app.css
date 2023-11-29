@@ -11,7 +11,8 @@
 .noise-bg {
   background-image: url('/images/film-grain.png');
   background-size: 10%;
-  animation: noise .2s steps(2) infinite;
+  animation: noise 0.2s steps(3) infinite;
+  transform: translate3d(0, 0, 0);
   mix-blend-mode: multiply;
   left: -50vw;
   top: -50vh;
@@ -105,12 +106,26 @@ header p {
   color: var(--tertiary-color);
 }
 
+/* headline */
+.headline span {
+  transition: 0.2s text-shadow ease-in-out;
+}
+.headline h1:hover span{
+  text-shadow: 0 0 10px #efff67;
+}
+
 /* skills */
+.port-skills div:first-child { width: 30%;}
+.port-skills div:last-child { width: 70%;}
 .port-skills ul {
   gap: 10px; /* Adjust the gap between items as needed */
 }
 
-.port-skills li {
+.port-skill--title {
+  border: 1px solid #efff67;
+}
+
+.port-skill--content {
   border: 1px solid var(--secondary-color);
 }
 
@@ -119,8 +134,7 @@ header p {
 }
 
 /*past work */
-.port-past-companies > div,
-.port-skills > div {
+.port-past-companies > div {
   width: 50%;
 }
 
