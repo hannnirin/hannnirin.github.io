@@ -6,10 +6,9 @@
   let isVisible = false;
 
   onMount(() => {
-    // Simulate a delay (replace this with your actual loading logic)
     setTimeout(() => {
       isVisible = true;
-    }, 2000); // Adjust the duration based on your actual loading time
+    }, 2000); 
   });
 </script>
 

@@ -9,18 +9,15 @@
   let pageLoaded = false;
 
   onMount(() => {
-    // Simulate a delay (replace this with your actual loading logic)
     setTimeout(() => {
      pageLoaded = true;
-    }, 1000); // Adjust the duration based on your actual loading time
+    }, 1000); 
   });
 </script>
 
 {#if !pageLoaded}
-  <!-- Use the Loader component while the page is loading -->
   <Loader />
 {:else}
-  <!-- Your main content goes here -->
   <div id="active-theme" class="{$bool ? 'light-theme': 'dark-theme'}">
     <div class="noise-bg fixed"></div>
       <slot />

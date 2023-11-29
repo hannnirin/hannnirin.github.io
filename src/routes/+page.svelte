@@ -1,7 +1,6 @@
 <script>
   import { bool } from '../stores/stores.js';
   import List from '../components/List.svelte';
-  import Companies from '../components/Companies.svelte';
   import Headline from '../components/Headline.svelte';
 	import ContactSidebar from '../components/ContactSidebar.svelte';
 	import ThemePicker from '../components/ThemePicker.svelte';
@@ -47,22 +46,26 @@
     { 
       name: 'HEDY Philippines Inc.', 
       position: 'AEM Frontend Developer',
-      duration: 'June 2020 - Present'
+      duration: 'June 2020 - Present',
+      role: 'I work closely with the offshore team in collaboration of developing and slicing the required components for an ecommerce website. I also worked SEO and Web Accessibility.'
     },
     {
       name: 'Dripcreative',
       position: 'Frontend Developer and Designer',
-      duration: 'May 2016 - April 2020'
+      duration: 'May 2016 - April 2020',
+      role: 'I work closely with one of the cofounders of the company. Designing and creating mockups for Wordpress Websites: ecommerce, landing page, portfolio, and blog website.'
     },
     {
       name: 'Symph',
       position: 'Frontend Developer and Designer',
-      duration: 'March 2014 - February 2016'
+      duration: 'March 2014 - February 2016',
+      role: 'I am a former lead frontend developer for their startup product that’s similar with Squarespace. I am responsible for developing components to be reused and drag n’ drop for users to create websites effortlessly. I also worked few client projects using with the following tech stack: phonegap, jquery, javascript, scss, wordpress.'
     },
     {
       name: 'ViCommerce/GlobalFusion',
       position: 'PHP Developer and Frontend Developer',
-      duration: 'April 2013 - February 2014'
+      duration: 'April 2013 - February 2014',
+      role: 'I worked on few internal projects and a frontend developer for a Phonegap real estate app.'
     }
   ];
 
@@ -112,10 +115,10 @@ console.log($bool);
     <div class="container px-28">
         <section class="port-skills flex flex-row justify-center">
           <div class="flex items-center animate__animated animate__fadeInLeft">
-            <Headline headlineTag="skills" headlineTagClass="text-white uppercase" headlineTitle="few things i am familiar and worked with" headlineTitleClass=""/>
+            <Headline headlineTag="skills" headlineTagClass="text-white uppercase" headlineTitle="few things i am familiar and worked with" headlineTitleClass="pr-6"/>
           </div>
             <div class="animate__animated animate__fadeInRight">
-                <List items={skills} listClass="p-0 masonry-list list-none flex flex-row flex-wrap text-xs text-center uppercase items-center { $bool ? 'text-white' : 'text-lightpurple'}"/>
+                <List items={skills} contentType="skills" listClass="p-0 masonry-list list-none flex flex-row flex-wrap text-xs text-center uppercase items-center { $bool ? 'text-white' : 'text-lightpurple'}"/>
             </div>
         </section>
         <section class="port-background py-80 pr-44 animate__animated animate__fadeInUp">
@@ -125,8 +128,8 @@ console.log($bool);
         </section>
         <section class="pb-80 flex port-past-companies">
             <Headline headlineTag="companies i have worked with" headlineTagClass="text-white uppercase animate__animated animate__fadeInRight" headlineTitle="crafted my expertise with these companies" headlineTitleClass="xl:pr-48"/>
-            
-           <Companies companiesClass="text-white animate__animated animate__fadeInLeft" companies={companies}/>
+          
+          <List listClass="text-white animate_animated animate_fadeInLeft" items={companies} contentType="companies"/>
           
         </section>
         <!-- history -->
