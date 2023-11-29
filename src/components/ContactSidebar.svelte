@@ -15,5 +15,24 @@
     {/if}
     
   {/each}
-  
 </ul>
+
+<style>
+  /* social media */
+  .port-socialmedia {
+    rotate: z 90deg;
+    gap: 15px;
+    right: -150px;
+    top: 500px;
+  }
+
+  .port-socialmedia .break {
+    width: 80px;
+    height: 1px;
+  }
+
+  .port-socialmedia a:hover {
+    text-decoration: dashed;
+    color: var(--tertiary-color);
+  }
+</style>

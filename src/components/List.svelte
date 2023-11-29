@@ -17,3 +17,18 @@
     {/each}
   {/each}
 </ul>
+
+<style>
+  /* skills */
+  
+
+  .port-skill--title {
+    border: 1px solid #efff67;
+  }
+
+  .port-skill--content {
+    border: 1px solid var(--secondary-color);
+  }
+
+  
+</style>

@@ -24,6 +24,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"animate.css": "^4.1.1",
 		"gsap": "^3.12.2"
 	}
 }
