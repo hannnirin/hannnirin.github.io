@@ -96,40 +96,41 @@ console.log($bool);
 </script>
 
 <ThemePicker/>
-<ContactSidebar socials={socials}/>
+
 
 <!-- hero section-->
-<header class="pt-96 pb-80">
-    <div class="container flex flex-col px-28">
+<header class="sm:pt-56 xl:pt-96 xs:pt-16 pb-80">
+    <div class="container flex flex-col xl:px-28 xs:px-4 lg:px-10">
         <div class="headline justify-center animate__animated animate__fadeInUp">
             <label for="" class="delay-75 uppercase text-xs { $bool ? 'text-darkpurple' : 'text-white'}">Introduction</label>
-            <h1 class="delay-75 font-primary font-semibold text-8xl pr-20 { $bool ? 'text-darkpurple' : 'text-white'}">Hello, my name is <span class="delay-75 { $bool ? 'text-purpleblue' : 'text-neongreen'}">Irene</span></h1>
+            <h1 class="delay-75 font-primary font-semibold xl:text-8xl xs:text-4xl sm:text-7xl xl:pr-20 lg:pr-52 { $bool ? 'text-darkpurple' : 'text-white'}">Hello, my name is <span class="delay-75 { $bool ? 'text-purpleblue' : 'text-neongreen'}">Irene</span></h1>
         </div>
         <div class="content mt-6 justify-center animate__animated animate__fadeInUp">
-            <p class="delay-75 text-2xl leading-relaxed { $bool ? 'text-darkpurple' : 'text-white'}">I work as an <span class="relative">AEM Frontend Developer</span> at HEDY Philippines Inc. I love creating smooth solutions using modern designs, turning ideas into engaging user interfaces with skill and creativity.</p>
+            <p class="delay-75 sm:text-2xl md:text-3xl lg:text-2xl leading-relaxed { $bool ? 'text-darkpurple' : 'text-white'}">I work as an <span class="relative">AEM Frontend Developer</span> at HEDY Philippines Inc. I love creating smooth solutions using modern designs, turning ideas into engaging user interfaces with skill and creativity.</p>
         </div>
     </div>
     <!-- container-->
 </header>
-<main>
-    <div class="container px-28">
-        <section class="port-skills flex flex-row justify-center">
+<main class="flex xs:flex-col xl:flex-row">
+  <ContactSidebar socials={socials}/>
+    <div class="container xl:px-28 xs:px-4 md:px-3 lg:px-10 xl:order-2 xs:order-1">
+        <section class="port-skills flex xs:flex-col xl:flex-row justify-center">
           <div class="flex items-center animate__animated animate__fadeInLeft">
-            <Headline headlineTag="skills" headlineTagClass="text-white uppercase" headlineTitle="few things i am familiar and worked with" headlineTitleClass="pr-6"/>
+            <Headline headlineTag="skills" headlineTagClass="text-white uppercase" headlineTitle="few things i am familiar and worked with" headlineTitleClass="sm:pr-12 xl:pr-6"/>
           </div>
-            <div class="animate__animated animate__fadeInRight">
-                <List items={skills} contentType="skills" listClass="p-0 masonry-list list-none flex flex-row flex-wrap text-xs text-center uppercase items-center { $bool ? 'text-white' : 'text-lightpurple'}"/>
-            </div>
+          <div class="animate__animated animate__fadeInRight">
+              <List items={skills} contentType="skills" listClass="sm:pr-14 sm:pt-12 lg:pt-10 p-0 masonry-list list-none flex flex-row flex-wrap text-xs text-center uppercase items-center { $bool ? 'text-white' : 'text-lightpurple'}"/>
+          </div>
         </section>
-        <section class="port-background py-80 pr-44 animate__animated animate__fadeInUp">
+        <section class="port-background sm:py-40 lg:py-80 sm:pr-28 lg:pr-44 animate__animated animate__fadeInUp">
 
           <Headline headlineTag="history" headlineTagClass="text-neongreen" headlineTitle="" detail="I graduated with a Bachelor's degree in Information Technology. I started my career as a PHP Developer, initially unaware of the distinct role that entails both coding and the utilization of design mockups. Within less than a year, I made the decision to specialize in Frontend roles and pursued additional training in user interface and user experience." detailClass="text-2xl leading-relaxed"/>
           
         </section>
-        <section class="pb-80 flex port-past-companies">
+        <section class="xl:pb-80 xs:pb-36 flex lg:flex-row xs:flex-col port-past-companies">
             <Headline headlineTag="companies i have worked with" headlineTagClass="text-white uppercase animate__animated animate__fadeInRight" headlineTitle="crafted my expertise with these companies" headlineTitleClass="xl:pr-48"/>
           
-          <List listClass="text-white animate_animated animate_fadeInLeft" items={companies} contentType="companies"/>
+            <List listClass="text-white animate_animated animate_fadeInLeft" items={companies} contentType="companies"/>
           
         </section>
         <!-- history -->
@@ -183,6 +184,19 @@ console.log($bool);
     position: absolute;
     z-index: -10;
   }
-  .port-skills div:first-child { width: 30%;}
-  .port-skills div:last-child { width: 70%;}
+  
+
+  @media screen and (min-width: 320px) {
+    .port-skills div:first-child { width: 100%;}
+    .port-skills div:last-child { width: 100%;}
+  }
+
+  @media screen and (min-width: 1024px) {
+    .port-skills div:last-child { width: 80%}
+  }
+
+  @media screen and (min-width: 1200px) {
+    .port-skills div:first-child { width: 30%;}
+    .port-skills div:last-child { width: 70%;}
+  }
 </style>

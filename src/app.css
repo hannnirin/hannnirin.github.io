@@ -23,6 +23,34 @@
   width: 50%;
 }
 
+@media screen and (min-width: 320px) {
+  .port-past-companies > div {
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .port-past-companies div:first-child {
+    width: 50%;
+  }
+
+  .port-past-companies div:last-child {
+    width: 55%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .port-past-companies div:first-child {
+    width: 45%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .port-past-companies > div {
+    width: 50%;
+  }
+}
+
 /* light theme */
 .light-theme .masonry-list .port-skill--content {
   background-color: #0003ff;

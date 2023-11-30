@@ -24,18 +24,18 @@
     
   {:else}
     {#each items as item, index (index) }
-      <li class="my-4 delay-75">
+      <li class="md:my-4 xl:my-6 delay-75">
         {#if index === 0}
-          <label for="" class="{ $bool ? 'text-purpleblue' : 'text-neongreen'} text-lg">
+          <label for="" class="{ $bool ? 'text-purpleblue' : 'text-neongreen'} xl:text-3xl">
             {item.name}
           </label>
 
           {:else}
-          <label for="" class="{ $bool ? 'text-darkpurple' : 'text-white'} text-lg">
+          <label for="" class="{ $bool ? 'text-darkpurple' : 'text-white'} xl:text-3xl xs:text-2xl">
             {item.name}
           </label>
         {/if}
-        <p class="text-xs { $bool ? 'text-darkpurple' : 'text-white'}">{item.position};{item.duration}</p>
+        <p class="xl:text-lg xs:text-sm { $bool ? 'text-darkpurple' : 'text-white'}">{item.position};{item.duration}</p>
       </li>
     {/each}
   {/if}
@@ -45,8 +45,6 @@
 
 <style>
   /* skills */
-  
-
   .port-skill--title {
     border: 1px solid #efff67;
   }
