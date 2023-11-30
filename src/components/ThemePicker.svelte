@@ -17,10 +17,8 @@
     // Determine whether it's morning or evening
     if (currentTime.getHours() >= 6 && currentTime.getHours() < 12) {
       bool.set(true);
-      console.log(bool, 'if def');
     } else if (currentTime.getHours() >= 18 || currentTime.getHours() < 6) {
       bool.set(false);
-      console.log(bool, 'if def false');
     }
 
     //switchTheme();
@@ -45,8 +43,6 @@
 
   }
 
-
-
 </script>
 
 <div class="absolute switch-theme-wrapper">
@@ -57,4 +53,48 @@
     <span class="slider absolute top-0 right-0 left-0 bottom-0"></span>
   </label>
 </div>
+<style>
+  /* switch theme */
+  .switch-theme-wrapper {
+    top: 50px;
+    right: 50px;
+  }
 
+  .switch-theme {
+    font-size: 17px;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+  }
+
+  .switch-theme .input:checked + .slider {
+    background-color: #ececec;
+  }
+
+  .switch-theme .input:focus + .slider {
+    box-shadow: 0 0 1px #183153;
+  }
+
+  .switch-theme .input:checked + .slider:before {
+    transform: translateX(24px);
+    background-color: #130D19;
+  }
+
+  .slider {
+    cursor: pointer;
+    background-color: #130D19;
+    transition: .4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    left: 5px;
+    bottom: 5px;
+    z-index: 2;
+    background-color: #efff67;
+    transition: .4s;
+  }
+</style>
