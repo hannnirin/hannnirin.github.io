@@ -130,7 +130,7 @@ console.log($bool);
         <section class="xl:pb-80 xs:pb-36 flex lg:flex-row xs:flex-col port-past-companies">
             <Headline headlineTag="companies i have worked with" headlineTagClass="text-white uppercase animate__animated animate__fadeInRight" headlineTitle="crafted my expertise with these companies" headlineTitleClass="xl:pr-48"/>
           
-            <List listClass="text-white animate_animated animate_fadeInLeft" items={companies} contentType="companies"/>
+            <List listClass="text-white animate_animated animate_fadeInLeft xl:pt-0 md:pt-6 xs:pt-10" items={companies} contentType="companies"/>
           
         </section>
         <!-- history -->

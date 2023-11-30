@@ -24,9 +24,9 @@
     
   {:else}
     {#each items as item, index (index) }
-      <li class="md:my-4 xl:my-6 delay-75">
+      <li class="xs:my-4 xl:my-6 delay-75">
         {#if index === 0}
-          <label for="" class="{ $bool ? 'text-purpleblue' : 'text-neongreen'} xl:text-3xl">
+          <label for="" class="{ $bool ? 'text-purpleblue' : 'text-neongreen'} xl:text-3xl xs:text-2xl">
             {item.name}
           </label>
 
@@ -35,7 +35,7 @@
             {item.name}
           </label>
         {/if}
-        <p class="xl:text-lg xs:text-sm { $bool ? 'text-darkpurple' : 'text-white'}">{item.position};{item.duration}</p>
+        <p class="xs:text-sm md:text-lg { $bool ? 'text-darkpurple' : 'text-white'}">{item.position};{item.duration}</p>
       </li>
     {/each}
   {/if}
