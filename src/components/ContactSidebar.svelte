@@ -4,10 +4,10 @@
   export let socials;
 
 </script>
-<ul class="sm:top-96 xl:order-1 xs:order-2 port-socialmedia list-none flex sm:fixed xs:relative uppercase { $bool ? 'text-darkpurple' : 'text-white'}">
+<ul class="xs:top-96 xl:order-1 xs:order-2 port-socialmedia list-none flex xs:relative xs:flex md:fixed uppercase { $bool ? 'text-darkpurple' : 'text-white'}">
   {#each socials as social}
     {#if social.type === 'break'}
-      <li class="flex items-center "><span class="break { $bool ? 'bg-purpleblue' : 'bg-lightpurple'}"></span></li>
+      <li class="flex items-center list-break"><span class="break { $bool ? 'bg-purpleblue' : 'bg-lightpurple'}"></span></li>
       {:else}
       <li>
         <a href="{social.url}" target="_blank" class="relative text-xs">{social.website}</a>
@@ -22,7 +22,34 @@
   .port-socialmedia {
     rotate: z 90deg;
     gap: 15px;
-    right: -150px;
+  }
+
+  @media screen and (min-width: 320px) {
+    .port-socialmedia {
+      right: 0;
+      rotate: none;
+      top: 0;
+    }
+
+    .list-break {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .port-socialmedia {
+      right: -90px;
+    }
+
+    .list-break {
+      display: inline;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    .port-socialmedia {
+      right: -150px;
+    }
   }
 
   .port-socialmedia .break {
