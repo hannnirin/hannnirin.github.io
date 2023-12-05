@@ -3,7 +3,6 @@
   import { bool } from '../stores/stores.js';
 
   import Loader from '../components/Loader.svelte';
-  import Animate from '../components/Animate.svelte';
   import { onMount } from 'svelte';
 
   let pageLoaded = false;
