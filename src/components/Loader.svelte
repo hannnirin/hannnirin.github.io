@@ -8,7 +8,8 @@
   onMount(() => {
     setTimeout(() => {
       isVisible = true;
-    }, 2000); 
+      console.log('isvisible');
+    }, 5000); 
   });
 </script>
 
