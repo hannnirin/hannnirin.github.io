@@ -1,4 +1,8 @@
 <script>
+  import AOS from 'aos';
+  import 'aos/dist/aos.css';
+  AOS.init();
+
   import { bool } from '../stores/stores.js';
   import List from '../components/List.svelte';
   import Headline from '../components/Headline.svelte';
@@ -100,32 +104,37 @@
 <!-- hero section-->
 <header class="sm:pt-56 xl:pt-96 xs:pt-40 pb-80">
     <div class="container flex flex-col xl:px-28 xs:px-4 lg:px-10">
-        <div class="headline justify-center animate__animated animate__fadeInUp xs:text-center md:text-left">
+        <div 
+          class="headline justify-center xs:text-center md:text-left" 
+          data-aos="fade-up">
             <label for="" class="delay-75 uppercase text-xs { $bool ? 'text-darkpurple' : 'text-white'}">Introduction</label>
             <h1 class="delay-75 font-primary font-semibold xl:text-8xl xs:text-5xl sm:text-7xl xl:pr-20 lg:pr-52 { $bool ? 'text-darkpurple' : 'text-white'}">Hello, my name is <span class="delay-75 { $bool ? 'text-purpleblue' : 'text-neongreen'}">Irene</span></h1>
         </div>
-        <div class="content mt-6 justify-center animate__animated animate__fadeInUp xs:text-center md:text-left">
+        <div 
+          class="content mt-6 justify-center xs:text-center md:text-left" data-aos="fade-up">
             <p class="delay-75 xs:text-xl sm:text-2xl md:text-3xl lg:text-2xl leading-relaxed { $bool ? 'text-darkpurple' : 'text-white'}">I work as an <span class="relative">AEM Frontend Developer</span> at HEDY Philippines Inc. I love creating smooth solutions using modern designs, turning ideas into engaging user interfaces with skill and creativity.</p>
         </div>
     </div>
 </header>
 <main class="">
   <ContactSidebar socials={socials}/>
-    <div class="container xl:px-28 xs:px-4 md:px-3 lg:px-10 xl:order-2 xs:order-1">
+    <div class="container xl:px-28 xs:px-4 md:px-3 lg:px-10 xl:order-2 xs:order-1" data-aos="fade-right">
         <section class="port-skills flex xs:flex-col md:flex-row">
-          <div class="flex items-center xs:w-full lg:w-1/4">
+          <div class="flex items-center xs:w-full lg:w-1/4" >
             <Headline headlineTag="skills" headlineTagClass="text-white uppercase" headlineTitle="few things i am familiar and worked with" headlineTitleClass="sm:pr-12 xl:pr-6"/>
           </div>
           <div class="xs:w-full lg:w-3/4">
               <List items={skills} contentType="skills" listClass="sm:pr-14 xs:pt-12 lg:pt-10 p-0 masonry-list list-none flex flex-row flex-wrap text-xs text-center uppercase items-center { $bool ? 'text-white' : 'text-lightpurple'}"/>
           </div>
         </section>
-        <section class="port-background xs:py-40 lg:py-80 sm:pr-28 lg:pr-44 animate__animated animate__fadeInUp">
+        <section class="port-background xs:py-40 lg:py-80 sm:pr-28 lg:pr-44" data-aos="fade-left">
 
           <Headline headlineTag="history" headlineTagClass="text-neongreen" headlineTitle="" detail="I graduated with a Bachelor's degree in Information Technology. I started my career as a PHP Developer, initially unaware of the distinct role that entails both coding and the utilization of design mockups. Within less than a year, I made the decision to specialize in Frontend roles and pursued additional training in user interface and user experience." detailClass="text-2xl leading-relaxed"/>
           
         </section>
-        <section class="xl:pb-80 xs:pb-36 flex lg:flex-row xs:flex-col port-past-companies">
+        <section 
+        class="xl:pb-80 xs:pb-36 flex lg:flex-row xs:flex-col port-past-companies"
+        data-aos="fade-down">
             <Headline headlineTag="companies i have worked with" headlineTagClass="text-white uppercase animate__animated animate__fadeInRight" headlineTitle="crafted my expertise with these companies" headlineTitleClass="xl:pr-48"/>
           
             <List listClass="text-white animate_animated animate_fadeInLeft xl:pt-0 md:pt-6 xs:pt-10" items={companies} contentType="companies"/>
