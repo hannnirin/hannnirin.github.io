@@ -113,10 +113,10 @@
   <ContactSidebar socials={socials}/>
     <div class="container xl:px-28 xs:px-4 md:px-3 lg:px-10 xl:order-2 xs:order-1">
         <section class="port-skills flex xs:flex-col md:flex-row">
-          <div class="flex items-center">
+          <div class="flex items-center xs:w-full lg:w-1/4">
             <Headline headlineTag="skills" headlineTagClass="text-white uppercase" headlineTitle="few things i am familiar and worked with" headlineTitleClass="sm:pr-12 xl:pr-6"/>
           </div>
-          <div class="">
+          <div class="xs:w-full lg:w-3/4">
               <List items={skills} contentType="skills" listClass="sm:pr-14 xs:pt-12 lg:pt-10 p-0 masonry-list list-none flex flex-row flex-wrap text-xs text-center uppercase items-center { $bool ? 'text-white' : 'text-lightpurple'}"/>
           </div>
         </section>
@@ -183,18 +183,4 @@
     z-index: -10;
   }
   
-
-  /* @media screen and (min-width: 320px) {
-    .port-skills div:first-child { width: 100%;}
-    .port-skills div:last-child { width: 100%;}
-  }
-
-  @media screen and (min-width: 1024px) {
-    .port-skills div:last-child { width: 80%}
-  }
-
-  @media screen and (min-width: 1200px) {
-    .port-skills div:first-child { width: 30%;}
-    .port-skills div:last-child { width: 70%;}
-  } */
 </style>
