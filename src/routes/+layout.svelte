@@ -1,7 +1,7 @@
 <script>
   import "../app.css";
+ 
   import { bool } from '../stores/stores.js';
-
   import Loader from '../components/Loader.svelte';
   import { onMount } from 'svelte';
 
