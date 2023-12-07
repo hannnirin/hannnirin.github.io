@@ -105,13 +105,13 @@
 <header class="sm:pt-56 xl:pt-96 xs:pt-40 pb-80">
     <div class="container flex flex-col xl:px-28 xs:px-4 lg:px-10">
         <div 
-          class="headline justify-center xs:text-center md:text-left" 
+          class="headline justify-center xs:text-center md:text-left xs:w-full lg:w-2/3" 
           data-aos="fade-up">
             <label for="" class="delay-75 uppercase text-xs { $bool ? 'text-darkpurple' : 'text-white'}">Introduction</label>
             <h1 class="delay-75 font-primary font-semibold xl:text-8xl xs:text-5xl sm:text-7xl xl:pr-20 lg:pr-52 { $bool ? 'text-darkpurple' : 'text-white'}">Hello, my name is <span class="delay-75 { $bool ? 'text-purpleblue' : 'text-neongreen'}">Irene</span></h1>
         </div>
         <div 
-          class="content mt-6 justify-center xs:text-center md:text-left" data-aos="fade-up">
+          class="content mt-6 justify-center xs:text-center md:text-left xs:w-full lg:w-3/4" data-aos="fade-up">
             <p class="delay-75 xs:text-xl sm:text-2xl md:text-3xl lg:text-2xl leading-relaxed { $bool ? 'text-darkpurple' : 'text-white'}">I work as an <span class="relative">AEM Frontend Developer</span> at HEDY Philippines Inc. I love creating smooth solutions using modern designs, turning ideas into engaging user interfaces with skill and creativity.</p>
         </div>
     </div>
@@ -135,9 +135,9 @@
         <section 
         class="xl:pb-80 xs:pb-36 flex lg:flex-row xs:flex-col port-past-companies"
         data-aos="fade-down">
-            <Headline headlineTag="companies i have worked with" headlineTagClass="text-white uppercase animate__animated animate__fadeInRight" headlineTitle="crafted my expertise with these companies" headlineTitleClass="xl:pr-48"/>
+            <Headline headlineTag="companies i have worked with" headlineTagClass="text-white uppercase" headlineTitle="crafted my expertise with these companies" headlineTitleClass="xl:pr-48"/>
           
-            <List listClass="text-white animate_animated animate_fadeInLeft xl:pt-0 md:pt-6 xs:pt-10" items={companies} contentType="companies"/>
+            <List listClass="text-white xl:pt-0 md:pt-6 xs:pt-10" items={companies} contentType="companies"/>
           
         </section> 
         <!-- history -->
@@ -155,11 +155,6 @@
 
 <style>
   /* header */
-  header .content,
-  header .headline {
-    width: 70%;
-  }
-
   header p {
     line-height: 3rem;
   }

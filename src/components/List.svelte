@@ -24,7 +24,8 @@
     
   {:else}
     {#each items as item, index (index) }
-      <li class="xs:my-4 xl:my-6 delay-75">
+      <li class="xs:my-4 xl:my-6 delay-75 work-item relative">
+        
         {#if index === 0}
           <label for="" class="{ $bool ? 'text-purpleblue' : 'text-neongreen'} xl:text-3xl xs:text-2xl">
             {item.name}
@@ -36,6 +37,9 @@
           </label>
         {/if}
         <p class="xs:text-sm md:text-lg { $bool ? 'text-darkpurple' : 'text-white'}">{item.position};{item.duration}</p>
+        <span class="xs:relative lg:absolute bg-white p-5 z-40">
+          <p class="text-darkpurple">{item.role}</p>
+        </span>
       </li>
     {/each}
   {/if}
@@ -53,5 +57,14 @@
     border: 1px solid var(--secondary-color);
   }
 
+  /* work */
+  .work-item:hover span {
+    display: block;
+  }
+
+  .work-item span {
+    display: none;
+    transition: 0.3s all ease-in-out;
+  }
   
 </style>
