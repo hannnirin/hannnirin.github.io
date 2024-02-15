@@ -50,7 +50,7 @@
     { 
       name: 'HEDY Philippines Inc.', 
       position: 'AEM Frontend Developer',
-      duration: 'June 2020 - Present',
+      duration: 'June 2020 - January 2024',
       role: 'I work closely with the offshore team in collaboration of developing and slicing the required components for an ecommerce website. I also worked SEO and Web Accessibility.'
     },
     {
@@ -112,7 +112,7 @@
         </div>
         <div 
           class="content mt-6 justify-center xs:text-center md:text-left xs:w-full lg:w-3/4" data-aos="fade-up">
-            <p class="delay-75 xs:text-xl sm:text-2xl md:text-3xl lg:text-2xl leading-relaxed { $bool ? 'text-darkpurple' : 'text-white'}">I work as an <span class="relative">AEM Frontend Developer</span> at HEDY Philippines Inc. I love creating smooth solutions using modern designs, turning ideas into engaging user interfaces with skill and creativity.</p>
+            <p class="delay-75 xs:text-xl sm:text-2xl md:text-3xl lg:text-2xl leading-relaxed { $bool ? 'text-darkpurple' : 'text-white'}">I worked as an <span class="relative">AEM Frontend Developer</span> at HEDY Philippines Inc. I love creating smooth solutions using modern designs, turning ideas into engaging user interfaces with skill and creativity.</p>
         </div>
     </div>
 </header>
