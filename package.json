@@ -11,7 +11,7 @@
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^1.0.0-next.90",
-		"@sveltejs/kit": "^1.0.0-next.587",
+		"@sveltejs/kit": "^1.30.4",
 		"autoprefixer": "^10.4.16",
 		"graphql": "^16.8.1",
 		"graphql-request": "^6.1.0",
