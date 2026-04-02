@@ -5,11 +5,11 @@
 <section id="skills" class="section">
   <div class="inner">
     <p class="section-label">Skills</p>
-    <div class="skills-grid">
+    <div class="skills-list">
       {#each skills as group}
-        <div class="skill-group">
+        <div class="group">
           <p class="group-label">{group.category}</p>
-          <ul class="skill-list">
+          <ul class="pill-list">
             {#each group.skills as skill}
               <li>{skill}</li>
             {/each}
@@ -23,12 +23,9 @@
 <style>
   .section {
     padding: 7rem 0;
-    border-top: 1px solid var(--color-border);
   }
 
   .inner {
-    max-width: 1100px;
-    margin: 0 auto;
     padding: 0 1.5rem;
   }
 
@@ -49,40 +46,77 @@
     margin-bottom: 2.5rem;
   }
 
-  .skills-grid {
+  .skills-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem 2rem;
+    border-top: 1px solid var(--color-border);
   }
 
-  @media (min-width: 768px) {
-    .skills-grid { grid-template-columns: repeat(3, 1fr); }
+  @media (min-width: 900px) {
+    .skills-list {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
-  @media (min-width: 1080px) {
-    .skills-grid { grid-template-columns: repeat(4, 1fr); }
+  .group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.25rem 1rem 1.25rem 0;
+    border-bottom: 1px solid var(--color-border);
+    border-right: 1px solid var(--color-border);
+  }
+
+  /* Remove right border on last column */
+  @media (min-width: 900px) {
+    .group:nth-child(3n) { border-right: none; }
+    .group:nth-child(3n+1) { padding-left: 0; }
+    .group:nth-child(3n+2) { padding-left: 1rem; }
+    .group:nth-child(3n) { padding-left: 1rem; }
+  }
+
+  @media (max-width: 899px) {
+    .group:nth-child(2n) { border-right: none; }
+    .group:nth-child(2n+1) { padding-left: 0; }
+    .group:nth-child(2n) { padding-left: 1rem; }
   }
 
   .group-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--color-muted);
-    margin-bottom: 0.85rem;
+    margin: 0;
   }
 
-  .skill-list {
+  .pill-list {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    flex-direction: column;
-    gap: 0.45rem;
+    flex-wrap: wrap;
+    gap: 0.4rem;
   }
 
-  .skill-list li {
-    font-size: 0.9375rem;
-    color: var(--color-body);
-    line-height: 1.5;
+  .pill-list li {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    padding: 0.3rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 100px;
+    cursor: default;
+    transition:
+      color 0.15s ease,
+      background 0.15s ease,
+      border-color 0.15s ease,
+      transform 0.15s ease;
+  }
+
+  .pill-list li:hover {
+    color: var(--color-bg);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    transform: scale(1.06);
   }
 </style>

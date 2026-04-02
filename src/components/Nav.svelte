@@ -31,17 +31,6 @@
 
 <svelte:window on:scroll={onScroll} />
 
-<!-- Top nav: visible only before scroll -->
-<nav class="nav-top" class:hidden={scrolled} aria-label="Site navigation">
-  <div class="nav-inner">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Work</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
-</nav>
-
 <!-- Pill nav: floats up from bottom on scroll -->
 <nav class="nav-pill" class:visible={scrolled} aria-label="Site navigation">
   <a href="#about"      class:active={activeSection === 'about'}>About</a>
@@ -52,59 +41,6 @@
 </nav>
 
 <style>
-  /* ── Top nav ─────────────────────────────────── */
-  .nav-top {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 50;
-    padding: 1.25rem 0;
-    display: flex;
-    justify-content: center;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-  }
-
-  .nav-top.hidden {
-    opacity: 0;
-    transform: translateY(-6px);
-    pointer-events: none;
-  }
-
-  .nav-inner {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .nav-inner a {
-    position: relative;
-    font-size: 0.8125rem;
-    letter-spacing: 0.03em;
-    color: var(--color-muted);
-    padding-bottom: 2px;
-    transition: color 0.2s ease;
-  }
-
-  .nav-inner a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background: var(--color-heading);
-    transition: width 0.22s ease;
-  }
-
-  .nav-inner a:hover {
-    color: var(--color-heading);
-  }
-
-  .nav-inner a:hover::after {
-    width: 100%;
-  }
-
   /* ── Pill nav ────────────────────────────────── */
   .nav-pill {
     position: fixed;

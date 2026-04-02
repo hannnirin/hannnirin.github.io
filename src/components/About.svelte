@@ -3,26 +3,18 @@
 		<p class="section-label">About</p>
 		<div class="about-grid">
 			<div class="about-text">
-				<h2>A decade of building<br />on the web.</h2>
+				<h2>A decade of building on the web.</h2>
 				<div class="body-copy">
 					<p>
-						I'm Irene, a frontend developer based in Brisbane with over nine years of experience
-						crafting websites and web applications.
+						I'm Irene, a frontend developer based in Brisbane with nine years of experience shipping
+						websites and web applications, from ecommerce platforms to content management systems.
 					</p>
-					<p>
-						What started as PHP development quickly evolved into a deep focus on the frontend: the
-						intersection of code and design where I do my best work. I have shipped projects from
-						ecommerce platforms to content management systems, always focusing accessibility and the
-						end user experience.
-					</p>
-					<p>
-						I value simplicity, useful design, and interfaces that just work. An eye for typography
-						and motion, shaped by years of UI/UX practice.
-					</p>
-					<p class="status-line">
-						<span class="status-dot" aria-hidden="true" />
-						Currently open to new opportunities.
-					</p>
+					<p>I care about simplicity, accessibility, and interfaces that just work.</p>
+					<ul class="status-list">
+						<li>Currently open to new opportunities</li>
+						<li>Learning TypeScript</li>
+						<li>Exploring Claude Code</li>
+					</ul>
 				</div>
 			</div>
 
@@ -57,8 +49,6 @@
 	}
 
 	.inner {
-		max-width: 1100px;
-		margin: 0 auto;
 		padding: 0 1.5rem;
 	}
 
@@ -118,15 +108,26 @@
 		max-width: 58ch;
 	}
 
-	.status-line {
+	.status-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
+	}
+
+	.status-list li {
 		display: flex;
 		align-items: center;
 		gap: 0.55rem;
-		color: var(--color-accent);
 		font-size: 0.9rem;
+		color: var(--color-accent);
 	}
 
-	.status-dot {
+	.status-list li::before {
+		content: '';
+		display: inline-block;
 		width: 7px;
 		height: 7px;
 		border-radius: 50%;

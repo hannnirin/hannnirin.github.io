@@ -1,4 +1,5 @@
 <script>
+	import Cursor from '../components/Cursor.svelte';
 	import Nav from '../components/Nav.svelte';
 	import Hero from '../components/Hero.svelte';
 	import About from '../components/About.svelte';
@@ -27,7 +28,11 @@
 		},
 		{
 			category: 'JavaScript',
-			skills: ['jQuery', 'Handlebars', 'Svelte']
+			skills: ['jQuery', 'Handlebars', 'Svelte', 'React', 'Next.js']
+		},
+		{
+			category: 'Backend',
+			skills: ['Express.js', 'EJS', 'MySQL']
 		},
 		{
 			category: 'Design',
@@ -70,25 +75,7 @@
 		}
 	];
 
-	// TODO: Replace placeholder projects with your actual work
-	const projects = [
-		{
-			title: 'Project Title',
-			description:
-				'A brief description of what this project does and the problem it solves. Replace this with your actual project details.',
-			stack: ['Svelte', 'Tailwind CSS', 'JavaScript'],
-			link: '#', // TODO: add live URL
-			github: '#' // TODO: add GitHub URL
-		},
-		{
-			title: 'Another Project',
-			description:
-				'Description of the project, its goals, and any notable technical decisions. Replace this with your actual project details.',
-			stack: ['WordPress', 'PHP', 'SCSS'],
-			link: '#',
-			github: '#'
-		}
-	];
+	const projects = [];
 
 	// TODO: Replace placeholder posts with your actual blog links
 	const posts = [
@@ -101,6 +88,11 @@
 			title: 'Setting up Express MVC + EJS + TailwindCSS 4.0',
 			url: 'https://medium.com/@hannnirin/setting-up-express-mvc-ejs-tailwindcss-4-0-2ccac72dad59',
 			date: '2024'
+		},
+		{
+			title: 'Custom paging from SlickJS',
+			url: 'https://codewithannnirin.wordpress.com/2018/08/19/utilizing-custom-paging-from-slickjs/',
+			date: '2018'
 		}
 	];
 
@@ -119,15 +111,11 @@
 			type: 'social',
 			website: 'Behance',
 			url: 'https://www.behance.net/rainhontanosas'
-		},
-		{
-			type: 'social',
-			website: 'rainhontanosas@gmail.com',
-			url: 'mailto:rainhontanosas@gmail.com'
 		}
 	];
 </script>
 
+<Cursor />
 <Nav />
 <Hero />
 <About />
