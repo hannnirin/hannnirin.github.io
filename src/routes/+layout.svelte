@@ -1,69 +1,53 @@
 <script>
-  import "../app.css";
- 
-  import { bool } from '../stores/stores.js';
+  import '../app.css';
+  import { lightMode } from '../stores/stores.js';
   import Loader from '../components/Loader.svelte';
+  import ThemePicker from '../components/ThemePicker.svelte';
   import { onMount } from 'svelte';
 
-  let pageLoaded = false;
+  let ready = false;
 
   onMount(() => {
-    setTimeout(() => {
-    pageLoaded = true;
-     console.log('pageload');
-    }, 2000); 
+    // Auto-detect time of day for initial theme
+    const hour = new Date().getHours();
+    lightMode.set(hour >= 6 && hour < 18);
+
+    // Subscribe and apply class to <html> so CSS variables cascade to <body>
+    const unsub = lightMode.subscribe((isLight) => {
+      document.documentElement.classList.toggle('dark-theme', !isLight);
+    });
+
+    // Allow npm loader animation (~2.6s) to finish before showing content
+    setTimeout(() => { ready = true; }, 3200);
+
+    return unsub;
   });
 </script>
-<div id="active-theme" class="{$bool ? 'light-theme': 'dark-theme'}">
-  <div class="noise-bg fixed"></div>
-{#if !pageLoaded}
+
+<!-- Theme toggle: always fixed top-right, z-index above everything -->
+<div class="theme-fixed">
+  <ThemePicker />
+</div>
+
+{#if !ready}
   <Loader />
 {:else}
-  
-      <slot />
-  
+  <slot />
 {/if}
-</div>  
+
 <style>
-  .noise-bg {
-  background-image: url('/images/film-grain.png');
-  background-size: 10%;
-  
-  mix-blend-mode: multiply;
-  left: -50vw;
-  top: -50vh;
-  width: 220vw;
-  height: 220vh;
-  z-index: -10;
-  overflow: hidden;
-}
-
-@media screen and (min-width: 320px) {
-  .noise-bg {
-    width: 200vw;
-  height: 200vh;
+  .theme-fixed {
+    position: fixed;
+    top: 1.1rem;
+    right: 1.5rem;
+    z-index: 60;
   }
-}
 
-@media screen and (min-width: 1024px) {
-  .noise-bg {
-    transform: translate3d(0, 0, 0);
-    animation: noise 0.2s steps(3) infinite;
+  @media (min-width: 768px) {
+    .theme-fixed { right: 2.5rem; }
   }
-}
 
-.noise-bg::after {
-  background-color: #130D19;
-  content: '';
-  height: 100%;
-  width: 100%;
-  opacity: 0.85;
-  top: 0;
-  left: 0;
-  z-index: -10;
-  position: absolute;
-}
-  .light-theme .noise-bg::after {
-    background-color: #e3dfe7;
+  @media (min-width: 1280px) {
+    .theme-fixed { right: 4rem; }
   }
 </style>

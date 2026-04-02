@@ -1,68 +1,88 @@
-<!-- Loader.svelte -->
-
 <script>
   import { onMount } from 'svelte';
 
-  let isVisible = false;
+  const entries = [
+    { delay: 0,    text: '> npm install irene-portfolio',  type: 'cmd'  },
+    { delay: 400,  text: 'Resolving packages...',          type: 'info' },
+    { delay: 750,  text: '+ svelte@4.2.19',                type: 'pkg'  },
+    { delay: 950,  text: '+ tailwindcss@3.3.5',            type: 'pkg'  },
+    { delay: 1150, text: '+ vite@4.5.0',                   type: 'pkg'  },
+    { delay: 1350, text: '+ gsap@3.12.2',                  type: 'pkg'  },
+    { delay: 1550, text: 'added 153 packages in 2.4s',     type: 'info' },
+    { delay: 1900, text: '> building portfolio...',        type: 'cmd'  },
+    { delay: 2250, text: '✓ compiled successfully',        type: 'ok'   },
+    { delay: 2600, text: '✓ ready.',                       type: 'done' },
+  ];
+
+  let count = 0;
+  let fading = false;
 
   onMount(() => {
-    setTimeout(() => {
-      isVisible = true;
-      console.log('isvisible');
-    }, 5000); 
+    entries.forEach((entry, i) => {
+      setTimeout(() => { count = i + 1; }, entry.delay);
+    });
+    // Start fading out just before layout unmounts this component
+    setTimeout(() => { fading = true; }, 2900);
   });
 </script>
 
-{#if !isVisible}
-  <!-- Display loader while the page is loading -->
-  <div class="loading flex flex-col">
-    <svg viewBox="0 0 100 100" width="80" height="80" class="rotating-svg">
-      <defs>
-        <path id="circle"
-          d="
-            M 50, 50
-            m -37, 0
-            a 37,37 0 1,1 74,0
-            a 37,37 0 1,1 -74,0"/>
-      </defs>
-      <text font-size="12" fill="#efff67">
-        <textPath xlink:href="#circle">
-          COOKING UP SOME MAGIC.
-        </textPath>
-      </text>
+<div class="loader" class:fading>
+  <div class="terminal">
+    {#each entries.slice(0, count) as entry}
+      <div class="line {entry.type}">{entry.text}</div>
+    {/each}
+    {#if count > 0 && count < entries.length}
+      <span class="cursor">▊</span>
+    {/if}
   </div>
-{/if}
+</div>
 
 <style>
-  /* Add your loader styles here */
-  svg {
-    fill: currentColor;
-    height: auto;
-    max-width: 66vmin;
-    transform-origin: center;
-    width: 66%;
-    
-  }
-
-  .loading {
+  .loader {
+    position: fixed;
+    inset: 0;
+    background: #0A0A0A;
+    display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #130D19;
+    justify-content: flex-start;
+    padding: 3rem clamp(1.5rem, 6vw, 5rem);
+    z-index: 100;
+    transition: opacity 0.35s ease;
   }
 
-  @keyframes rotate {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
+  .loader.fading {
+    opacity: 0;
   }
 
-  .rotating-svg {
-    animation: rotate 5s linear infinite;
+  .terminal {
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    line-height: 2;
   }
-      
-  
+
+  .line {
+    animation: appear 0.12s ease forwards;
+  }
+
+  @keyframes appear {
+    from { opacity: 0; transform: translateX(-4px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  .line.cmd  { color: #FFFFFF; }
+  .line.info { color: #555555; }
+  .line.pkg  { color: #39FF14; }
+  .line.ok   { color: #39FF14; }
+  .line.done { color: #FFFFFF; font-weight: 600; }
+
+  .cursor {
+    color: #39FF14;
+    display: inline-block;
+    animation: blink 0.75s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+  }
 </style>
