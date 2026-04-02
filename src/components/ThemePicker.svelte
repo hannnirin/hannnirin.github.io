@@ -1,100 +1,55 @@
 <script>
-  import { removeAllClasses } from '../helpers/helpers.js';
-  import { bool } from '../stores/stores.js';
-  import { onMount } from 'svelte';
+  import { lightMode } from '../stores/stores.js';
 
-  onMount(() => {
-    // switch theme from the initial load
-    defaultTheme();
-  });
-
-  function defaultTheme() {
-    const currentTime = new Date();
-
-    // Get the local time in 24-hour format
-    let localTime = currentTime.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
-
-    // Determine whether it's morning or evening
-    if (currentTime.getHours() >= 6 && currentTime.getHours() < 12) {
-      bool.set(true);
-    } else if (currentTime.getHours() >= 18 || currentTime.getHours() < 6) {
-      bool.set(false);
-    }
-
-    //switchTheme();
+  function toggle() {
+    lightMode.update((v) => !v);
   }
-
-  function switchTheme(e){
-    const projectHTML = document.getElementById("active-theme");
-
-    // removing existing classes
-    removeAllClasses(projectHTML);
-
-    if($bool) {
-      bool.set(true);
-      console.log(bool.get(), 'light');
-
-    }else {
-      
-      console.log(bool.get(), 'dark');
-
-      bool.set(false);
-    }
-
-  }
-
 </script>
 
-<div class="absolute switch-theme-wrapper">
-  <label class="switch-theme relative">
+<button
+  class="theme-toggle"
+  on:click={toggle}
+  aria-label={$lightMode ? 'Switch to dark mode' : 'Switch to light mode'}
+>
+  {#if $lightMode}
+    <!-- Moon: switch to dark -->
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  {:else}
+    <!-- Sun: switch to light -->
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="5" />
+      <line x1="12" y1="1" x2="12" y2="3" />
+      <line x1="12" y1="21" x2="12" y2="23" />
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+      <line x1="1" y1="12" x2="3" y2="12" />
+      <line x1="21" y1="12" x2="23" y2="12" />
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+    </svg>
+  {/if}
+</button>
 
-    <input type="checkbox" name="" id="" value="light" on:change={switchTheme} bind:checked={$bool} class="input w-0 h-0 o-0">
-  
-    <span class="slider absolute top-0 right-0 left-0 bottom-0"></span>
-  </label>
-</div>
 <style>
-  /* switch theme */
-  .switch-theme-wrapper {
-    top: 50px;
-    right: 50px;
-  }
-
-  .switch-theme {
-    font-size: 17px;
-    display: inline-block;
-    width: 50px;
-    height: 25px;
-  }
-
-  .switch-theme .input:checked + .slider {
-    background-color: #ececec;
-  }
-
-  .switch-theme .input:focus + .slider {
-    box-shadow: 0 0 1px #183153;
-  }
-
-  .switch-theme .input:checked + .slider:before {
-    transform: translateX(24px);
-    background-color: #130D19;
-  }
-
-  .slider {
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--color-muted);
     cursor: pointer;
-    background-color: #130D19;
-    transition: .4s;
+    transition: color 0.2s ease, border-color 0.2s ease;
+    flex-shrink: 0;
   }
 
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 15px;
-    width: 15px;
-    left: 5px;
-    bottom: 5px;
-    z-index: 2;
-    background-color: #efff67;
-    transition: .4s;
+  .theme-toggle:hover {
+    color: var(--color-heading);
+    border-color: var(--color-heading);
   }
 </style>
