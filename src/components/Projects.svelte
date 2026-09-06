@@ -25,7 +25,12 @@
               class:active={hoveredProject === project}
               on:mouseenter={() => (hoveredProject = project)}
             >
-              <span class="proj-title">{project.title}</span>
+              <span class="proj-title">
+                {project.title}
+                {#if project.inProgress}
+                  <span class="proj-badge">In progress</span>
+                {/if}
+              </span>
               {#if project.category}
                 <span class="proj-tag">{project.category}</span>
               {/if}
@@ -145,6 +150,25 @@
 
   .proj-row.active .proj-title {
     color: var(--color-heading);
+  }
+
+  .proj-badge {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.1em 0.45em;
+    border: 1px solid var(--color-border);
+    border-radius: 3px;
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    white-space: nowrap;
+    vertical-align: 0.12em;
+  }
+
+  .proj-row.active .proj-badge {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
   }
 
   .proj-tag {

@@ -76,6 +76,16 @@
 
 	const allProjects = [
 		{
+			title: 'Popcornr',
+			category: 'AI-Assisted Build',
+			stack: ['Next.js', 'TypeScript', 'Supabase', 'Tailwind CSS'],
+			description:
+				'A review platform for TV fanatics: rate a single episode, a season, or a whole series. Developed with an AI-assisted workflow using Claude Code & Design.',
+			link: '#',
+			github: '#',
+			inProgress: true
+		},
+		{
 			title: 'Hercules',
 			category: 'Full-Stack Project',
 			stack: ['React', 'Express.js', 'MySQL', 'Tailwind CSS'],
