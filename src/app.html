@@ -10,19 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width" />
 
-     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://hannnirin.vercel.app/" />
-    <meta property="og:title" content="Irene Hontanosas - Frontend Developer" />
-    <meta property="og:description" content="Here's a brief portfolio about Irene Hontanosas, a frontend developer based in the Philippines." />
-    <meta property="og:image" content="" />
- 
-     <!-- Twitter -->
+    <!-- Page-specific og:/twitter: tags live in each route's <svelte:head>. Do not duplicate them
+         here: the head placeholder below renders after this block, and scrapers use the first
+         occurrence of a property, so anything set here would override every page. -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://hannnirin.vercel.app/" />
-    <meta property="twitter:title" content="Irene Hontanosas - Frontend Developer" />
-    <meta property="twitter:description" content="Here's a brief portfolio about Irene Hontanosas, a frontend developer based in the Philippines." />
-    <meta property="twitter:image" content="https://yourwebsite.com/twitter-image.jpg" />
 
 		%sveltekit.head%
 	</head>

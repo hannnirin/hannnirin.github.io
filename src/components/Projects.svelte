@@ -10,7 +10,8 @@
     {#if projects.length === 0}
       <p class="coming-soon">Something's brewing. Projects on their way.</p>
     {:else}
-      <div class="proj-grid">
+      <!-- svelte-ignore a11y-no-static-element-interactions -->
+      <div class="proj-grid" on:mouseleave={() => (hoveredProject = null)}>
 
         <!-- Col 1: heading -->
         <div class="col-heading"></div>
@@ -23,11 +24,10 @@
               class="proj-row"
               class:active={hoveredProject === project}
               on:mouseenter={() => (hoveredProject = project)}
-              on:mouseleave={() => (hoveredProject = null)}
             >
               <span class="proj-title">{project.title}</span>
-              {#if project.stack && project.stack.length}
-                <span class="proj-tag">{project.stack[0]}</span>
+              {#if project.category}
+                <span class="proj-tag">{project.category}</span>
               {/if}
             </div>
           {/each}
@@ -38,6 +38,11 @@
           {#if hoveredProject}
             <p class="detail-desc">{hoveredProject.description}</p>
             <div class="detail-links">
+              {#if hoveredProject.caseStudy}
+                <a href={hoveredProject.caseStudy} class="detail-link">
+                  Case Study →
+                </a>
+              {/if}
               {#if hoveredProject.link && hoveredProject.link !== '#'}
                 <a href={hoveredProject.link} target="_blank" rel="noopener noreferrer" class="detail-link">
                   Live ↗

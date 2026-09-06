@@ -1,5 +1,5 @@
 <script>
-  import { onMount, onDestroy } from 'svelte';
+  import { onMount } from 'svelte';
 
   let x = -200;
   let y = -200;
@@ -11,10 +11,7 @@
 
   onMount(() => {
     window.addEventListener('mousemove', onMove);
-  });
-
-  onDestroy(() => {
-    window.removeEventListener('mousemove', onMove);
+    return () => window.removeEventListener('mousemove', onMove);
   });
 </script>
 
