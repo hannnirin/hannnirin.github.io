@@ -1,6 +1,7 @@
 <script>
   import '../app.css';
   import { lightMode } from '../stores/stores.js';
+  import Cursor from '../components/Cursor.svelte';
   import Loader from '../components/Loader.svelte';
   import ThemePicker from '../components/ThemePicker.svelte';
   import { onMount } from 'svelte';
@@ -23,6 +24,8 @@
     return unsub;
   });
 </script>
+
+<Cursor />
 
 <!-- Theme toggle: always fixed top-right, z-index above everything -->
 <div class="theme-fixed">
